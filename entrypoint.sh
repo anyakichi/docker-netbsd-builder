@@ -20,9 +20,11 @@ if [ $uid -ne 0 ]; then
 fi
 
 if [ $# -ne 0 ]; then
+    export USER=${BUILD_USER}
+
     if buildenv "$1" -h >/dev/null 2>&1; then
-        exec sudo -EHsu ${BUILD_USER} buildenv "$@"
+        exec gosu ${BUILD_USER} buildenv "$@"
     else
-        exec sudo -EHsu ${BUILD_USER} "$@"
+        exec gosu ${BUILD_USER} "$@"
     fi
 fi
