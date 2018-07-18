@@ -1,5 +1,4 @@
-FROM debian
-MAINTAINER INAJIMA Daisuke <inajima@sopht.jp>
+FROM debian:8
 
 RUN \
   apt-get update && \
