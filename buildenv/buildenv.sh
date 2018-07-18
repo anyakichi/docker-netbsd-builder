@@ -219,7 +219,7 @@ main_generic()
     if [[ ${yes} ]]; then
         exec_commands "${commands}"
     else
-        ask_exec_commands build "${commands}"
+        ask_exec_commands "${scmd}" "${commands}"
     fi
 }
 
